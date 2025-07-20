@@ -1,4 +1,3 @@
-using System;
 using Enemy.StateMachine;
 using UnityEngine;
 using Random = UnityEngine.Random;

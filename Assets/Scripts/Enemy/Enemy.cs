@@ -1,4 +1,4 @@
-using System;
+using Player;
 using UnityEngine;
 
 namespace Enemy
@@ -8,10 +8,10 @@ namespace Enemy
         [SerializeField] private int _reward;
         
         public int Reward => _reward;
-        private Player.Player _target;
+        private PlayerController _target;
 
-        public Player.Player Target => _target;
+        public PlayerController Target => _target;
         
-        public void Init(Player.Player target) => _target = target;
+        public void Init(PlayerController target) => _target = target;
     }
 }

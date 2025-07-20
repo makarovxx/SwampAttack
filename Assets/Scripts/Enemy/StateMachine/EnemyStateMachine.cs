@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Enemy.StateMachine
@@ -7,7 +8,7 @@ namespace Enemy.StateMachine
     {
         [SerializeField] private State _startState;
         private State _currentState;
-        private Player.Player _target;
+        private PlayerController _target;
 
         public State CurrentState => _currentState;
 

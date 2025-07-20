@@ -1,7 +1,7 @@
 using Enemy;
 using UnityEngine;
 
-namespace Weapon
+namespace Weapons
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class Projectile : MonoBehaviour

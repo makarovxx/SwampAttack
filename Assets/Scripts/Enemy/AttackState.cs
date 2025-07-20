@@ -4,6 +4,7 @@ using UnityEngine.Serialization;
 
 namespace Enemy
 {
+    [RequireComponent(typeof(Animator))]
     public abstract class AttackState : State
     {
         [FormerlySerializedAs("_damage")] [SerializeField] protected int Damage;

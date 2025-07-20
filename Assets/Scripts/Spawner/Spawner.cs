@@ -1,12 +1,13 @@
 using System;
 using Enemy;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Wave[] _waves;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private Player.Player _player;
+    [FormerlySerializedAs("_player")] [SerializeField] private Player.PlayerController playerController;
 
     private Wave _currentWave;
     private int _currentWaveIndex;
@@ -48,7 +49,7 @@ public class Spawner : MonoBehaviour
     {
         liveUnit.OnDie -= OnEnemyDying;
         if (liveUnit is Enemy.Enemy enemy)
-            _player.AddMoney(enemy.Reward);
+            playerController.AddMoney(enemy.Reward);
     }
 
     public void NextWave()
@@ -61,7 +62,7 @@ public class Spawner : MonoBehaviour
     {
         Enemy.Enemy enemy = Instantiate(_currentWave.Template, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint)
             .GetComponent<Enemy.Enemy>();
-        enemy.Init(_player);
+        enemy.Init(playerController);
         enemy.OnDie += OnEnemyDying;
     }
 

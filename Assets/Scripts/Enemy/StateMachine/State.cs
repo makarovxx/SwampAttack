@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 namespace Enemy.StateMachine
@@ -6,9 +7,9 @@ namespace Enemy.StateMachine
     public class State : MonoBehaviour
     {
         [SerializeField] private List<Transition> _transitions;
-        public Player.Player Target { get; protected set; }
+        public PlayerController Target { get; protected set; }
 
-        public void Enter(Player.Player target)
+        public void Enter(PlayerController target)
         {
             if (enabled == false)
             {
