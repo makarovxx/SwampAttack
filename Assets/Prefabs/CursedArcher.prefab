@@ -202,7 +202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _reward: 10
-  _target: {fileID: 0}
 --- !u!114 &1165793021667389016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 2294998975613773865}
-  _transitionRange: 3
+  _transitionRange: 31.3
   _rangedSpread: 0.5
 --- !u!114 &2294998975613773865
 MonoBehaviour:
@@ -260,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 4910170174710935462}
-  _damage: 10
-  _delay: 1.5
+  Damage: 10
+  Delay: 0.9
   _shootPoint: {fileID: 36382418842190012}
   _weapon: {fileID: 5289945782684244413, guid: 9df2218ab1412de42bc6f266dfe233cc, type: 3}
 --- !u!114 &4910170174710935462

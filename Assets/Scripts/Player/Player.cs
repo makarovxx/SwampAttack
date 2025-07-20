@@ -41,10 +41,9 @@ namespace Player
             _currentWeapon.Shoot(Direction,_shootPoint);
             _animator.SetTrigger(ShootTriggerName);
         }
-        
-        private void OnEnemyDied(int reward)
-        {
-            Money += reward;
-        }
+
+        public void AddMoney(int amount) => Money += amount;
+
+        private void OnEnemyDied(int reward) => AddMoney(reward);
     }
 }

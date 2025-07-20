@@ -1,5 +1,7 @@
+using System;
 using Enemy.StateMachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DistanceTransiton : Transition
 {
@@ -10,6 +12,7 @@ public class DistanceTransiton : Transition
 
     private void Update()
     {
+        if(!Target) return;
         if (Vector2.Distance(transform.position, Target.transform.position) < _transitionRange)
             NeedTransit = true;
     }

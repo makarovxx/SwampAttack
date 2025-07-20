@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Enemy
@@ -5,13 +6,17 @@ namespace Enemy
     public class LiveUnit : MonoBehaviour
     {
         [SerializeField] protected int _health;
-        [SerializeField] private int _reward;
         
+        public event Action<LiveUnit> OnDie;
+
         public void TakeDamage(int damage)
         {
             _health -= damage;
             if (_health <= 0)
+            {
+                OnDie?.Invoke(this);
                 Destroy(gameObject);
+            }
         }
     }
 }
